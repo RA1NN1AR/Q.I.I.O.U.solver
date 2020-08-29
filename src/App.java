@@ -10,6 +10,10 @@ public class App {
         System.out.println("格式应该看起来像这样:ax^2+bx+c>=0");
         System.out.println("输入a的值.");
         Double a = in.nextDouble();
+        if(a==0){
+            System.out.println("错误,a不能为0.");
+            System.exit(0);
+        }
         System.out.println("输入b的值.");
         Double b = in.nextDouble();
         System.out.println("输入c的值.");
@@ -22,6 +26,8 @@ public class App {
         System.out.println("Delta:"+delta);
         Double x1,x2;
         System.out.print("不等式的解集为:");
+
+        if(a==0){err();}
 
         if(delta>0){ 
             //方程有两个不相等的实数根
@@ -70,7 +76,7 @@ public class App {
             x1=-(b/2*a);
             switch(ne){
                 case ">":
-                    System.out.printf("{x|x≠%f}.%n",x1.toString());
+                    System.out.printf("{x|x≠%f}.%n",x1);
                 break;
                 
                 case ">=":
